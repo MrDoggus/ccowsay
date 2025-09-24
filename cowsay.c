@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
         if ( !strcmp(argv[counter], "-e") || !strcmp(argv[counter], "--eyes") ) {
             nextarg=(counter + 1);
             if ( strlen(argv[nextarg]) == 1 ) {
-                strcpy(&eyes, argv[nextarg]);
+                strncpy(&eyes, argv[nextarg], 1);
             }
             else {
                 displayhelp();
@@ -71,8 +71,8 @@ int main(int argc, char *argv[]) {
         }
         else if ( !strcmp(argv[counter], "-t") || !strcmp(argv[counter], "--thought") ) {
             thought=1;
-            strcpy(&upperbubble, "O");
-            strcpy(&lowerbubble, "o");
+            strncpy(&upperbubble, "O", 1);
+            strncpy(&lowerbubble, "o", 1);
         }
         else if ( !strcmp(argv[counter], "-h") || !strcmp(argv[counter], "--help") ) {
             displayhelp();
